@@ -5,7 +5,7 @@ volumes:
 
 services:
   nest-web:
-    container_name: rest
+    container_name: nest-web-main
     restart: always
     build:
       context: .
@@ -13,6 +13,6 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./rest:/rest
-      - work:/work
+      - ./rest:/opt/rest
+      - ./poetry:/opt/poetry
     command: python main.py
